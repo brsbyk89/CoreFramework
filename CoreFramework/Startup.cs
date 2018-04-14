@@ -25,7 +25,7 @@ namespace CoreFramework
 			services.AddScoped<IAccountRepository, AccountRepository>();
 			string assemblyName = typeof(Startup).Namespace;
 			services.AddMvc();
-			var connection = @"Server=KNETDEVSQL;Database=AtlantisDB;Trusted_Connection=True;";
+			var connection = @"Server=ServerName;Database=DBName;Trusted_Connection=True;";
 			services.AddDbContext<DataContext>(options => options.UseSqlServer(connection, optionsBuilder =>
 			   optionsBuilder.MigrationsAssembly(assemblyName)));
 		}
